@@ -134,7 +134,7 @@ void make_template(char* template, int tolerance, char* a, char* b, int a_start,
  file.
 */
 
-/*
+
 static PyObject * function_longest_match(PyObject *self, PyObject *args) {
     char* a;
     char* b;
@@ -147,7 +147,7 @@ static PyObject * function_longest_match(PyObject *self, PyObject *args) {
     best_size = longest_match(a, b, 0, lena, 0, lenb, &a_offset, &b_offset);
     return Py_BuildValue("(iii)", best_size, a_offset, b_offset);
 }
-*/
+
 
 static PyObject * function_make_template(PyObject *self, PyObject *args) {
     char* template;
@@ -178,7 +178,7 @@ static PyObject * function_marker(PyObject *self, PyObject *args) {
 static PyMethodDef ModuleMethods[] = {
     // longest_match is commented out because it's not necessary to expose it
     // at the Python level. To expose it, uncomment the following line.
-/*    {"longest_match", function_longest_match, METH_VARARGS, "Given two strings, determines the longest common substring and returns a tuple of (best_size, a_offset, b_offset)."},*/
+    {"longest_match", function_longest_match, METH_VARARGS, "Given two strings, determines the longest common substring and returns a tuple of (best_size, a_offset, b_offset)."},
     {"make_template", function_make_template, METH_VARARGS, "Given two strings, returns a template."},
     {"marker", function_marker, METH_VARARGS, "Returns a string of the template marker."},
     {NULL, NULL, 0, NULL}        // sentinel

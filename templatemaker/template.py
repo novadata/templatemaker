@@ -7,7 +7,7 @@ License: BSD
 See readme.txt for full documentation.
 """
 
-from _templatemaker import make_template, marker
+from _templatemaker import make_template, marker,longest_match
 import re
 
 # The marker character lives in _templatemaker.marker() so we don't have
@@ -22,7 +22,8 @@ class Template(object):
         self._brain = brain
         self._tolerance = tolerance
         self.version = 0
-
+    def lcs(self, textA,textB):
+        return longest_match(textA,textB)
     def clean(self, text):
         """
         Strips any unwanted stuff from the given Sample String, in order to
